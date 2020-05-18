@@ -74,6 +74,7 @@ def add_to_order():
 def order_confirmation():
     username = request.args.get('username')
     email = request.args.get('email')
+    db.order.load()
     items = db.order.get_items()
     
     return render_template('order-confirmation.html', items=items, username=username, email=email)
