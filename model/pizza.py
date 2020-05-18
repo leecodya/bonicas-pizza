@@ -21,7 +21,7 @@ class Pizzas():
     def load(self):
         pizzas = []
         try:
-            with open("app/data/pizzas.json", "rt") as pizzas_file:
+            with open("data/pizzas.json", "rt") as pizzas_file:
                 pizzas_json_string = pizzas_file.read()
                 pizzas_wrapped = json.loads(pizzas_json_string)
                 pizzas = pizzas_wrapped["pizzas"]
@@ -81,7 +81,7 @@ class Pizzas():
             pizzas.append(pizza_dict)
             
         try:
-            with open("app/data/pizzas.json", "wt") as pizzas_file:
+            with open("data/pizzas.json", "wt") as pizzas_file:
                 pizzas_file.write(json.dumps({"pizzas": pizzas}))
         except:
             print("writing to file pizzas.json failed")

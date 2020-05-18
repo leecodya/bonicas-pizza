@@ -1,6 +1,6 @@
-from app.model.order import Order
-from app.model.pizza import Pizzas
-from app.model.category import Categories
+from model.order import Order
+from model.pizza import Pizzas
+from model.category import Categories
 
 class Database:
     """ A database simulation """

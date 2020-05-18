@@ -24,7 +24,7 @@ class Order():
         self.order = []
         order = []
         try:
-            with open("app/data/order.json", "rt") as order_file:
+            with open("data/order.json", "rt") as order_file:
                 order_json_string = order_file.read()
                 order_wrapped = json.loads(order_json_string)
                 order = order_wrapped["order"]
@@ -82,7 +82,7 @@ class Order():
             order.append(item_dict)
             
         try:
-            with open("app/data/order.json", "wt") as order_file:
+            with open("data/order.json", "wt") as order_file:
                 order_file.write(json.dumps({"order": order}, indent=4))
         except:
             print("writing to file order.json failed")
