@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock%}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid mb-0">
+    <div class="container">
+        <h1 class="p-5 text-center myShadow text-light" style="font-size:6em">Bonica's Pizza</h1>
+        <h4 class="text-center text-light myShadow">Stop by today & enjoy a REAL, authentic brick oven pizza straight from the streets of Italy!</h4>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <div class="row">
+        <img class="col-md-4" src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Pizza Image">
+        <img class="col-md-4" src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Pizza Image">
+        <img class="col-md-4" src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Pizza Image">
+    </div>
+    <div class="row text-center mt-4">
+        <div class="col-md-12">
+            <h2><u>Welcome Valued Customers!!</u></h2>
+            <h5>Welcome hungry and valued customers! Here at Bonica’s Pizza, we make you feel like you are part of the family! We always welcome new guests with good service and even better pizza! Enjoy classics such as the cheese or pepperoni pizza or create a unique pizza catered to your taste! You think it, we can make it! So stop by today or order online and see what all the talk is about! We can’t wait to see you!</h5>
+        </div>
+    </div>
+    <hr>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2><u>Our Hours</u></h2>
+        </div>
+    </div>
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-6">
+            <ul class="list-group text-center">
+                <li class="list-group-item">Monday  11:00am - 10:00pm</li>
+                <li class="list-group-item">Tuesday  11:00am - 10:00pm</li>
+                <li class="list-group-item">Wednesday  11:00am - 10:00pm</li>
+                <li class="list-group-item">Thursday  11:00am - 10:00pm</li>
+                <li class="list-group-item">Friday  11:00am - 11:00pm</li>
+                <li class="list-group-item">Saturday  11:00am - 11:00pm</li>
+                <li class="list-group-item">Sunday  11:00am - 10:00pm</li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2><u>Our Location</u></h2>
+        </div>
+    </div>
+    <div class="row">
+        <img class="col-md-8 mt-3" style="max-height: 250px;" src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Our location">
+        <div class="col-md-4">
+            <h3 class="text-danger">Bonica’s Pizza</h3>
+            <p>555 Some Road</p>
+            <p>Roberta, GA 31078</p>
+            <p>Phone: 478-555-5555</p>
+        </div>
+    </div>
+</div>
+<!-- Move to About Page
+<section>
+    <div class="page-header">
+        <h2>Special Announcements</h2>
+    </div>
+    <div class="row well">
+        <div class="col-md-8">
+            <h3>This week at Bonica’s Pizza, we are going to change it up a little bit. This week, we won’t have the traditional marinara sauce as a default. For this week ONLY, you can CHOOSE your favorite sauce to put on top of your crust WITH NO EXTRA CHARGE! That’s right! But remember, this deal only last until Saturday, so stop in today and try it out! You won’t be sorry! ;)</h3>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</section> -->
+{% endblock%}

@@ -1,0 +1,16 @@
+.jumbotron{
+    background-image: radial-gradient(gray, black);
+    
+}
+.serif{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.myRed{
+    color: #d9534f;
+}
+.myShadow{
+    text-shadow: 5px 5px 0 #d9534f;
+}
+hr{
+    border-top: 5px solid lightgrey;
+}

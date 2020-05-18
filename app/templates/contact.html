@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Contact Us{% endblock%}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid mb-0">
+    <div class="container">
+        <h1 class="p-5 text-center myShadow text-light" style="font-size:3em">Contact Us</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+            <form action="#" method="" role="form">
+                <div class="form-group">
+                    <label for="contact-name" class="control-label">Name</label>
+                    <input type="text" class="form-control" id="contact-name" placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="contact-email" class="control-label">Email</label>
+                    <input type="text" class="form-control" id="contact-email" placeholder="Your email">
+
+                </div>
+                <div class="form-group">
+                    <label for="contact-message" class="control-label">Message</label>
+                    <textarea name="contact-message" id="contact-message" class="form-control" cols="30" rows="10" placeholder="Your message"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock%}

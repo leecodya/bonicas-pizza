@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Menu{% endblock%}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid mb-0">
+    <div class="container">
+        <h1 class="p-5 text-center myShadow text-light" style="font-size:3em">Menu</h1>
+    </div>
+</div>
+<div class="container mt-4">
+    <div class="row mb-4">
+        <img src="{{ url_for('static', filename='images/brick-oven.jpg') }}" alt="Pizza Guy" class="col-md-5 img-fluid rounded-circle" style="width:100%">
+        <div class="col-md-7">
+            <h5 class="text-center" style="line-height: 1.5em;padding-top:1em">
+                <p>On her way back from Italy after an amazing and tasteful trip, she was informed of how and where to get real, authentic ingredients at a low price so she may spread the word of REAL pizza at a low price. We have access to some of the freshest ingredients that other restaurants wish they could have</p>
+            </h5>
+        </div>
+    </div><!--end row-->
+    <hr>
+</div>
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-12">             
+            <h2><u>Get Some Today!</u></h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <img src="{{ url_for('static', filename='images/pizza-guy.jpg') }}" alt="Originals" class="img-fluid rounded-circle" style="width:100%; height:250px">
+            <h5 class="text-center"><a href="{{ url_for('originals') }}"><b>ORIGINALS</b></a></h5>
+        </div>
+        <div class="col-md-3">
+            <img src="{{ url_for('static', filename='images/pizza-slice.jpg') }}" alt="Favorites" class="img-fluid rounded-circle" style="width:100%; height:250px">
+            <h5 class="text-center"><a href="{{ url_for('favorites') }}"><strong>FAVORITES</strong></a></h5>
+        </div>
+    </div>
+</div>
+{% endblock%}

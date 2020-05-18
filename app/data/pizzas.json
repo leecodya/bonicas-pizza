@@ -1,0 +1,60 @@
+{
+    "pizzas": [
+        {
+            "pizza_id": 1,
+            "category_id": 1,
+            "name": "Cheese",
+            "description": "This classic pizza is unlike anything you have ever tasted. With a combination of 3 cheeses and a special ingredient, our cheese pizza has everything you need to have a mouth watering experience!",
+            "price": 7.00
+        },
+        {
+            "pizza_id": 2,
+            "category_id": 1,
+            "name": "Pepperoni",
+            "description": "A favorite for any occasion, the traditional pepperoni pizza is always a good fallback! our pizza incorporates that one ingredient that's too goood to tell! ;)",
+            "price": 7.50
+        },
+        {
+            "pizza_id": 3,
+            "category_id": 1,
+            "name": "Ultimate Cheese",
+            "description": "This pizza puts a turn on the classic cheese pizza. The Ultimate Cheese pizza has the same characteristics EXCEPT for the fact that the marinara sauce has been replaced with a homemade cheese sauce! MMMM!!!!",
+            "price": 10.00
+        },
+        {
+            "pizza_id": 4,
+            "category_id": 1,
+            "name": "Meat Lover's",
+            "description": "This sensational pizza is a meat lover's dream! It feautres every single meat choice we have to offer",
+            "price": 11.00
+        },
+        {
+            "pizza_id": 5,
+            "category_id": 2,
+            "name": "Veggie",
+            "description": "Onions, green peppers, mushrooms, green & black olives",
+            "price": 9.00
+        },
+        {
+            "pizza_id": 6,
+            "category_id": 2,
+            "name": "Margarita",
+            "description": "Light sauce topped w/ sliced tomatoes, fresh basil & fresh mozzarella",
+            "price": 10.00
+        },
+        {
+            "pizza_id": 7,
+            "category_id": 2,
+            "name": "Steak N' Cheese",
+            "description": "Tender sliced steak cooked with onions, mushrooms, green peppers & mozzarella cheese",
+            "price": 11.00
+        },
+        {
+            "pizza_id": 8,
+            "category_id": 2,
+            "name": "BBQ Chicken",
+            "description": "A southern pizza with BBQ sauce, red onions, chicken strips & mozzarella cheese",
+            "price": 11.00
+        }
+    ]
+}

@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block title %}Order Confirmation{% endblock %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid mb-0">
+    <div class="container">
+        {% if username %}
+        <h1 class="p-5 text-center myShadow text-light" style="font-size:3em">{{ username }}'s Order</h1>
+        {% else %}
+        <h1 class="p-5 text-center myShadow text-light" style="font-size:3em">No Items Added</h1>
+        {% endif %}
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 mt-4">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for msg in messages %}
+                        <p class="alert alert-info">{{ msg }}</p>
+                    {% endfor %}
+                {% endif%}
+            {% endwith %}
+            {% if items %}
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th>Pizza</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td>
+                            <p class="mb-1">{{ item.name }}</p>
+                            <small>{{ item.size }}, {{ item.crust }}</small>
+                        </td>
+                        <td>
+                            ${{ item.price }}0
+                        </td>
+                        <td>
+                            <form method="POST" action="{{ url_for('update') }}">
+                                <input class="text-center" type="text" size="3" name="quantity" id="quantity" value="{{ item.quantity }}">
+                                <input type="hidden" name="pizza_id" value="{{ item.pizza_id }}">
+                                <input type="hidden" name="username" value="{{ username }}">
+                                <input type="hidden" name="email" value="{{ email }}">
+                                <input type="submit" class="btn btn-info ml-5" value="Update">
+                            </form>
+                        </td>
+                        <td class="text-left">
+                            <form method="POST" action="{{ url_for('delete') }}">
+                                <input type="hidden" name="pizza_id" value="{{ item.pizza_id }}">
+                                <input type="hidden" name="username" value="{{ username }}">
+                                <input type="hidden" name="email" value="{{ email }}">
+                                <input type="submit" class="btn btn-danger" value="Delete">
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            <p><small>* To delete an item, you can either set the quantity to 0 or less and click the Update button OR you can click the Delete button.</small></p>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <a class="btn btn-success" href="{{ url_for('order_form', username=username, email=email) }}">Continue adding items to order</a>
+            <a class="btn btn-secondary" style="float:right" href="{{ url_for('place_order') }}">Place Order</a>
+            {% else %}
+            <h3>There are no items added to your order</h3>
+            <a class="btn btn-success" href="{{ url_for('order_form') }}">Add items</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

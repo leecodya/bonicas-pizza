@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block title %}Add to Order{% endblock %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid mb-0">
+    <div class="container">
+        <h1 class="p-5 text-center myShadow text-light" style="font-size:3em">Order Form</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for msg in messages %}
+                    <p class="alert alert-info">{{ msg }}</p>
+                    {% endfor %}
+                {% endif%}
+            {% endwith %}
+            <form action="{{ url_for('add_to_order') }}" method="POST" role="form">
+                <div class="form-group">
+                    <label for="username" class="control-label">* Name: </label>
+                    {% if user_name %}
+                    <input type="text" name="username" class="form-control" id="username" value="{{ user_name }}" required>
+                    {% else %}
+                    <input type="text" name="username" class="form-control" id="username" placeholder="Your name" required>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="email" class="control-label">* Email: </label>
+                    {% if user_email %}
+                    <input type="text" name="email" class="form-control" id="email" value="{{ user_email }}" required>
+                    {% else %}
+                    <input type="text" name="email" class="form-control" id="email" placeholder="Your email" required>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="size" class="control-label">* Size: </label>
+                    <select name="size" class="form-control" id="size" required>
+                        <option value="">-- Select One -- </option>
+                        {% for size in sizes %}
+                        <option value="{{ size }}">{{ size }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="crust" class="control-label">* Crust: </label>
+                    <select name="crust" class="form-control" id="crust" required>
+                        <option value="">-- Select One -- </option>
+                        {% for crust in crusts %}
+                        <option value="{{ crust }}">{{ crust }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pizza" class="control-label"> Pizza: </label>
+                    <select name="pizza_id" class="form-control" id="pizza">
+                        <option value="">-- Select One -- </option>
+                        {% for pizza in pizzas %}
+                        <option value="{{ pizza.pizza_id }}">{{ pizza.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity" class="control-label">* Quantity: </label>
+                    <input type="number" name="quantity" class="form-control" id="quantity" required>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="sauce" class="control-label">* Sauce: </label>
+                    <select class="form-control" id="sauce" required>
+                        <option value="">-- Select One -- </option>
+                        {% for sauce in sauces %}
+                        <option value="{{ sauce }}" name="{{ sauce }}">{{ sauce }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cheese" class="control-label">* Cheeses: </label>
+                    <select multiple class="form-control" id="cheese" required>
+                        <option value="">-- Select One or More-- </option>
+                        {% for cheese in cheeses %}
+                        <option value="{{ cheese }}" name="{{ cheese }}">{{ cheese }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="topping" class="control-label">* Toppings: </label>
+                    <select multiple class="form-control" id="topping" required>
+                        <option value="">-- Select One or More-- </option>
+                        {% for topping in toppings %}
+                        <option value="{{ topping }}" name="{{ topping }}">{{ topping }}</option>
+                        {% endfor %}
+                    </select>
+                </div> -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Add to order</button>
+                </div>
+                <div class="form-group">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

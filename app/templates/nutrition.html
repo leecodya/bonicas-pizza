@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Nutrition{% endblock%}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid mb-0">
+    <div class="container">
+        <h1 class="p-5 text-center myShadow text-light" style="font-size:3em">Nutrition</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center mt-4">
+        <img class="col-md-10" src="{{ url_for('static', filename='images/nutrition.jpg') }}" alt="Nutrition Guide">
+    </div>
+</div>
+{% endblock%}
